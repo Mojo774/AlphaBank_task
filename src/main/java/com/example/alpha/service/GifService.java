@@ -22,7 +22,7 @@ public class GifService {
 
         JSONObject request = new JSONObject(json);
 
-        String result = request.getJSONObject("data").getString("url");
+        String result = request.getJSONObject("data").getString("embed_url");
 
         return result;
     }
