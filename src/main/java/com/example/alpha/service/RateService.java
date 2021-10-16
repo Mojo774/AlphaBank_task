@@ -1,6 +1,7 @@
 package com.example.alpha.service;
 
 import com.example.alpha.clients.RateClient;
+import com.example.alpha.models.TypeGif;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,10 +18,10 @@ public class RateService {
     @Value("${app_id}")
     private String app_id;
 
-    public int differenceRate() {
+    public TypeGif getTypeGif() {
         LocalDate date = LocalDate.now().minusDays(1);
 
-        return getRate().compareTo(getRate(date));
+        return TypeGif.getType(getRate().compareTo(getRate(date)));
     }
 
     public Double getRate() {
