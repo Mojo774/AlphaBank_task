@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Currency;
 
 @Service
 public class RateService {
@@ -15,8 +16,14 @@ public class RateService {
     @Autowired
     private RateClient rateClient;
 
-    @Value("${app_id}")
+    @Value("${service.rate.app_id}")
     private String app_id;
+
+    @Value("${service.rate.base}")
+    private String base;
+
+    @Value("${service.rate.currency}")
+    private String currency;
 
     public TypeGif getTypeGif() {
         LocalDate date = LocalDate.now().minusDays(1);
@@ -29,18 +36,18 @@ public class RateService {
 
         JSONObject request = new JSONObject(json);
 
-        Double rate = request.getJSONObject("rates").getDouble("RUB");
+        Double rate = request.getJSONObject("rates").getDouble(currency);
 
         return rate;
     }
 
     public Double getRate(LocalDate date) {
 
-        String json = rateClient.findRateData(date.toString(), app_id);
+        String json = rateClient.findRateData(date.toString(), app_id, base);
 
         JSONObject request = new JSONObject(json);
 
-        Double rate = request.getJSONObject("rates").getDouble("RUB");
+        Double rate = request.getJSONObject("rates").getDouble(currency);
 
         return rate;
     }

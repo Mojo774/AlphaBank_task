@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponseWrapper;
 import java.net.URI;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/")
 public class Controller {
 
     @Autowired
@@ -25,7 +25,7 @@ public class Controller {
     @Autowired
     private GifService gifService;
 
-    @GetMapping("/gif")
+    @GetMapping()
     public ResponseEntity getGif() {
 
         TypeGif t = rateService.getTypeGif();

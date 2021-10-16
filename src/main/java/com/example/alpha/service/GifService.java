@@ -13,7 +13,7 @@ public class GifService {
     @Autowired
     private GifClient gifClient;
 
-    @Value("${api_key}")
+    @Value("${service.gif.api_key}")
     private String api_key;
 
     public String getGif(TypeGif typeGif){
