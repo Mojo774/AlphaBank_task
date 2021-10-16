@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "Cl", url = "https://openexchangerates.org/api")
 public interface RateClient {
 
-    @RequestMapping(value = "/latest.json?app_id=${app_id}", method = RequestMethod.GET)
+    @GetMapping("/latest.json?app_id=${app_id}")
     String findRate(String app_id);
 
     @GetMapping("/historical/{data}.json?app_id=${app_id}")
