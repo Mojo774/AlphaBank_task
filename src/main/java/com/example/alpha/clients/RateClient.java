@@ -5,13 +5,13 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "client_rate", url = "${service.rate.url}")
+@FeignClient(name = "client-rate", url = "${service.rate.url}")
 public interface RateClient {
 
-    @GetMapping("/latest.json?app_id=${app_id}")
-    String findRate(String app_id);
+    @GetMapping("/latest.json")
+    String findRate(@RequestParam("app_id") String app_id);
 
-    @GetMapping("/historical/{data}.json?app_id=${app_id}&base=${base}")
+    @GetMapping("/historical/{data}.json")
     String findRateData(
             @RequestParam("data") String data,
             @RequestParam("app_id") String app_id,
