@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface GifClient {
 
     @GetMapping("/v1/gifs/random?api_key=${api_key}&tag=${tag}")
-    String findRate(@RequestParam("api_key") String api_key, @RequestParam("tag") String tag);
+    String findGif(@RequestParam("api_key") String api_key, @RequestParam("tag") String tag);
 }
