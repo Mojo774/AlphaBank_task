@@ -33,7 +33,8 @@ public class Controller {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(response));
-        return new ResponseEntity(headers, HttpStatus.TEMPORARY_REDIRECT);
+
+        return new ResponseEntity(headers, HttpStatus.SEE_OTHER);
     }
 
 }
