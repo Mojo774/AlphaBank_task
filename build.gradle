@@ -11,6 +11,11 @@ apply plugin: 'java'
 sourceCompatibility = 11
 targetCompatibility = 11
 
+jar {
+	baseName = 'app'
+	version = '0.0.1'
+}
+
 repositories {
 	mavenCentral()
 }
@@ -49,3 +54,5 @@ test {
 		events "passed", "skipped", "failed"
 	}
 }
+
+
