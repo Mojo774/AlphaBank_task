@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+
 }
 
 group = 'com.example'
@@ -43,6 +44,8 @@ dependencies {
 	implementation group: 'io.springfox', name: 'springfox-bean-validators', version: '3.0.0'
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 
+	implementation 'com.heroku.sdk:heroku-deploy:3.0.4'
+
 }
 
 dependencyManagement {
@@ -57,5 +60,4 @@ test {
 		events "passed", "skipped", "failed"
 	}
 }
-
 
