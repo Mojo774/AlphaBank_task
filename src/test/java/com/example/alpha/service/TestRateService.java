@@ -5,14 +5,11 @@ import com.example.alpha.models.TypeGif;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.BDDMockito.given;

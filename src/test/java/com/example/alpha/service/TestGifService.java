@@ -1,17 +1,14 @@
 package com.example.alpha.service;
 
 import com.example.alpha.clients.GifClient;
-import com.example.alpha.clients.RateClient;
 import com.example.alpha.models.TypeGif;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.BDDMockito.given;
 
 @SpringBootTest
@@ -24,14 +21,14 @@ public class TestGifService {
     private String api_key;
 
     @Test
-    void getGifRich(){
+    void getGifRich() {
         TypeGif typeGif = TypeGif.rich;
 
-        given(gifClient.findGif(api_key,typeGif.toString())).willReturn(
+        given(gifClient.findGif(api_key, typeGif.toString())).willReturn(
                 "{\"data\":{\"embed_url\":\"ff\"}}"
         );
 
-        String json = gifClient.findGif(api_key,typeGif.toString());
+        String json = gifClient.findGif(api_key, typeGif.toString());
 
         JSONObject request = new JSONObject(json);
         String result = request.getJSONObject("data").getString("embed_url");
@@ -40,14 +37,14 @@ public class TestGifService {
     }
 
     @Test
-    void getGifBroke(){
+    void getGifBroke() {
         TypeGif typeGif = TypeGif.broke;
 
-        given(gifClient.findGif(api_key,typeGif.toString())).willReturn(
+        given(gifClient.findGif(api_key, typeGif.toString())).willReturn(
                 "{\"data\":{\"embed_url\":\"ff\"}}"
         );
 
-        String json = gifClient.findGif(api_key,typeGif.toString());
+        String json = gifClient.findGif(api_key, typeGif.toString());
 
         JSONObject request = new JSONObject(json);
         String result = request.getJSONObject("data").getString("embed_url");
