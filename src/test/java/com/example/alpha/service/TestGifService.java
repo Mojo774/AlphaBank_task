@@ -21,7 +21,7 @@ public class TestGifService {
     private String api_key;
 
     @Test
-    void getGifRich() {
+    void getGifLinkRich() {
         TypeGif typeGif = TypeGif.rich;
 
         given(gifClient.findGif(api_key, typeGif.toString())).willReturn(
@@ -37,7 +37,7 @@ public class TestGifService {
     }
 
     @Test
-    void getGifBroke() {
+    void getGifLinkBroke() {
         TypeGif typeGif = TypeGif.broke;
 
         given(gifClient.findGif(api_key, typeGif.toString())).willReturn(
