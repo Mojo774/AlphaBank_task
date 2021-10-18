@@ -17,7 +17,7 @@ public class GifService {
     @Value("${service.gif.api_key}")
     private String api_key;
 
-    public String getGif(TypeGif typeGif){
+    public String getGifLink(TypeGif typeGif){
 
         String json = gifClient.findGif(api_key,typeGif.toString());
 
