@@ -38,11 +38,11 @@ public class TestRateService {
     @Test
     void getRate() {
 
-        given(rateClient.findRate(app_id)).willReturn(
+        given(rateClient.findRate(app_id, base)).willReturn(
                 "{\"rates\":{\"" + currency + "\":" + anyDouble() + "}}"
         );
 
-        String json = rateClient.findRate(app_id);
+        String json = rateClient.findRate(app_id, base);
         JSONObject request = new JSONObject(json);
         Double rate = request.getJSONObject("rates").getDouble(currency);
 

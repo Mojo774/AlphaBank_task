@@ -32,7 +32,7 @@ public class RateService {
     }
 
     public Double getRate() {
-        String json = rateClient.findRate(app_id);
+        String json = rateClient.findRate(app_id, base);
 
         JSONObject request = new JSONObject(json);
 

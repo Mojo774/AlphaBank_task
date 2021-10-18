@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface RateClient {
 
     @GetMapping("/latest.json")
-    String findRate(@RequestParam("app_id") String app_id);
+    String findRate(@RequestParam("app_id") String app_id,
+                    @RequestParam("base") String base);
 
     @GetMapping("/historical/{data}.json")
     String findRateData(
