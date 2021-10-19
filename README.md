@@ -3,6 +3,11 @@
 heroku - https://gif-alphabank.herokuapp.com/   
 swagger - https://gif-alphabank.herokuapp.com/swagger-ui/index.html#
 
+docker -
+docker build -t alpha .
+docker run -p 8080:8080 alpha
+
+
 ## Техническая составляющая
 ### Backend
 
