@@ -39,7 +39,7 @@ public class TestRateService {
     void getRate() {
 
         given(rateClient.findRate(app_id, base)).willReturn(
-                "{\"rates\":{\"" + currency + "\":" + anyDouble() + "}}"
+                "{\"rates\":{\"" + currency + "\":\"3.2\"}}"
         );
 
         String json = rateClient.findRate(app_id, base);
