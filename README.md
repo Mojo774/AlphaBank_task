@@ -1,5 +1,9 @@
 # AlphaBank_task
 
+Сервис, который обращается к сервису курсов валют, и отдает gif в ответ:  
+если курс по отношению к рублю за сегодня стал выше вчерашнего, то отдаем gif типа "rich"  
+если ниже - "broke"
+
 heroku - https://gif-alphabank.herokuapp.com/   
 swagger - https://gif-alphabank.herokuapp.com/swagger-ui/index.html#
 
